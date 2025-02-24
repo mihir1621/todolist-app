@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="py-3 px-5 flex justify-center bg-gray-100"> 
+    <nav className="py-3 px-5 flex justify-center bg-gray-200"> 
       <Image 
         src="/images/hexahomelogo.png.png" 
         alt="Hexadecimal Software" 
