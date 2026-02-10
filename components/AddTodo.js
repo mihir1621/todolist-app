@@ -26,7 +26,7 @@ export default function AddTodo({ onAdd }) {
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Add your todo's..."
+        placeholder="Add your todos..."
         className="flex-grow p-4 rounded-xl border border-gray-200 dark:border-[#1a1a1a] shadow-sm focus:outline-none focus:border-[#00ff88] dark:focus:border-[#00ff88] text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-500 bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-sm transition-all"
       />
 

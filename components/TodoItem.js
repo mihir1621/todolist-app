@@ -46,6 +46,16 @@ const TodoItem = ({ todo, onDelete, onEdit, onToggleComplete }) => {
         <motion.div
           whileTap={{ scale: 0.8 }}
           onClick={() => onToggleComplete(todo.id)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              onToggleComplete(todo.id);
+            }
+          }}
+          tabIndex={0}
+          role="checkbox"
+          aria-checked={todo.completed}
+          aria-label={`Mark "${todo.text}" as ${todo.completed ? 'incomplete' : 'complete'}`}
           className={`w-6 h-6 rounded-full border-2 flex items-center justify-center cursor-pointer transition-colors ${todo.completed ? "bg-green-500 border-green-500" : "border-gray-300 dark:border-[#1a1a1a] hover:border-[#033487] dark:hover:border-[#00ff88]"
             }`}
         >

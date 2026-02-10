@@ -68,6 +68,11 @@ export default function Home() {
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${stats.percentage}%` }}
+                  role="progressbar"
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={stats.percentage}
+                  aria-label={`${stats.percentage}% of tasks completed`}
                   className="h-full bg-gradient-to-r from-[#033487] to-[#1e40af] dark:from-[#00ff88] dark:to-[#00cc6a]"
                 />
               </div>

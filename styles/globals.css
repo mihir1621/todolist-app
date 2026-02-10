@@ -7,6 +7,8 @@
   --foreground: #171717;
   --card-bg: #ffffff;
   --border-color: #f3f4f6;
+  --accent-green: #00ff88;
+  --accent-green-dark: #00cc6a;
 }
 
 .dark {
