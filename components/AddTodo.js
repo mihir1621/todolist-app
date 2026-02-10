@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function AddTodo({ onAdd }) {
   const [text, setText] = useState("");
@@ -12,23 +13,35 @@ export default function AddTodo({ onAdd }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full max-w-2xl mx-auto space-x-3">
+    <motion.form
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      onSubmit={handleSubmit}
+      className="flex w-full max-w-2xl mx-auto space-x-3 mb-8"
+    >
       {/* Input Box */}
-      <input
-  type="text"
-  value={text}
-  onChange={(e) => setText(e.target.value)}
-  placeholder="Add your todo’s"
-  className="flex-grow p-3 rounded-lg border border-gray-300 shadow-sm focus:ring focus:ring-blue-300 text-black placeholder-gray-500"
-/>
+      <motion.input
+        whileFocus={{ scale: 1.01, boxShadow: "0px 0px 8px rgba(0, 255, 136, 0.3)" }}
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Add your todo's..."
+        className="flex-grow p-4 rounded-xl border border-gray-200 dark:border-[#1a1a1a] shadow-sm focus:outline-none focus:border-[#00ff88] dark:focus:border-[#00ff88] text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-500 bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-sm transition-all"
+      />
 
       {/* Add Task Button */}
-      <button
-  type="submit"
-  className="px-5 py-3 bg-[#033487] text-white rounded-lg font-medium flex items-center space-x-2 shadow-md hover:bg-[#022866] transition"
->
-        <span>➕ Add Task</span>
-      </button>
-    </form>
+      <motion.button
+        whileHover={{ scale: 1.05, backgroundColor: "#00cc6a" }}
+        whileTap={{ scale: 0.95 }}
+        type="submit"
+        className="px-6 py-4 bg-[#00ff88] text-black rounded-xl font-semibold flex items-center space-x-2 shadow-lg transition-colors"
+      >
+        <span className="text-lg">➕</span>
+        <span>Add Task</span>
+      </motion.button>
+    </motion.form>
+
   );
 }
+
