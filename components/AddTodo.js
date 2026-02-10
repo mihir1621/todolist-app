@@ -35,7 +35,7 @@ export default function AddTodo({ onAdd }) {
         whileHover={{ scale: 1.05, backgroundColor: "#00cc6a" }}
         whileTap={{ scale: 0.95 }}
         type="submit"
-        className="px-6 py-4 bg-[#00ff88] text-black rounded-xl font-semibold flex items-center space-x-2 shadow-lg transition-colors"
+        className="px-6 py-4 bg-[#033487] text-black rounded-xl font-semibold flex items-center space-x-2 shadow-lg transition-colors"
       >
         <span className="text-lg">➕</span>
         <span>Add Task</span>
