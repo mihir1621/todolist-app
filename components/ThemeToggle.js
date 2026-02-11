@@ -14,8 +14,8 @@ export default function ThemeToggle() {
 
     if (!mounted) {
         return (
-            <div className="p-2 h-10 w-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800 transition-colors border border-transparent">
-                <div className="h-5 w-5 bg-gray-200 dark:bg-gray-700 animate-pulse rounded-full" />
+            <div className="p-1.5 h-8 w-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 transition-colors border border-transparent">
+                <div className="h-3.5 w-3.5 bg-gray-200 dark:bg-gray-700 animate-pulse rounded-full" />
             </div>
         );
     }
@@ -27,7 +27,7 @@ export default function ThemeToggle() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setTheme(isDark ? "light" : "dark")}
-            className="p-2 h-10 w-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#033487] dark:focus:ring-blue-400"
+            className="p-1.5 h-8 w-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#033487] dark:focus:ring-blue-400"
             aria-label="Toggle Theme"
         >
             <AnimatePresence mode="wait" initial={false}>
@@ -39,9 +39,9 @@ export default function ThemeToggle() {
                     transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
                     {isDark ? (
-                        <Moon className="w-5 h-5 text-[#00ff88]" />
+                        <Moon className="w-3.5 h-3.5 text-[#00ff88]" />
                     ) : (
-                        <Sun className="w-5 h-5 text-amber-500" />
+                        <Sun className="w-3.5 h-3.5 text-amber-500" />
                     )}
                 </motion.div>
             </AnimatePresence>
